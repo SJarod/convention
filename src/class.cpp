@@ -21,3 +21,7 @@ void Class::myPublicMethod()
 {
 	// do something
 }
+
+void Class::myConstMethod() const
+{
+}

@@ -23,4 +23,5 @@ public:
 	~Class() = default;
 
 	void myPublicMethod();
+	void myConstMethod() const;
 };
