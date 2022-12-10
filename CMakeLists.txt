@@ -43,9 +43,10 @@ add_library(${BUILD_NAME} STATIC ${SOURCES})
 target_include_directories(${BUILD_NAME} PRIVATE include)
 
 # using external libraries (optional)
+# the libraries should be added in the externals' CMakeLists
 target_link_libraries(${BUILD_NAME}
-    PUBLIC lib1
-    PUBLIC lib2
+    PUBLIC lib1_build_name
+    PUBLIC lib2_build_name
 )
 
 # installing build (using cmake --install command)
