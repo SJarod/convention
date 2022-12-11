@@ -1,7 +1,7 @@
 #include "template.hpp"
 
-template<typename T>
-inline void Template<T>::myMethod() const
+template<typename TType>
+inline void Template<TType>::myMethod() const
 {
 	// do something
 }
