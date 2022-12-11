@@ -10,6 +10,10 @@ This repository is meant to describe a coding convention.
 - [C++](#c)
     - [Cases](#cases)
     - [General coding](#general-coding)
+- [Versionning with Git](#versionning-with-git)
+    - [Branches](#branches)
+    - [Commits](#commits)
+    - [Tags](#tags)
 
 # Organizing the files
 
@@ -243,4 +247,41 @@ public:
 Macros must be defined with upper case snake case.
 ```c++
 #define MY_MACRO
+```
+
+# Versionning with Git
+
+## Branches
+The branches must be named with no upper case letters. If the name uses multiple words, they must be separated with dashes.
+
+The main branch must be master and the remote must be origin. A second main branch can be added to keep the milestones to be on master, it shall be named dev.
+
+Each feature must be developped on specificly named branches.
+These features can then be merged into dev when stable. Then the stable version that appear to be a milestone can be merged to master
+```
+origin/master
+origin/dev
+origin/graphics-pipeline
+```
+If working on other branches, the feature branches must be rebased before being merged to the main branch to avoid strange versionning tree.
+
+## Commits
+Commits must be a quick description of the work with no upper case letters. A deeper description can be given as a list.
+```bash
+git commit -m "quick modification" -m "- modification 1
+- modification 2"
+```
+```bash
+"quick modification"
+
+"- modification 1
+ - modification 2"
+ ```
+
+## Tags
+Tags must represent a stable version. It must be described with 3 digits.
+```
+1.0.0
+1.2.0
+0.0.4
 ```
