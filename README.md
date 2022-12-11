@@ -14,6 +14,7 @@ This repository is meant to describe a coding convention.
     - [Branches](#branches)
     - [Commits](#commits)
     - [Tags](#tags)
+    - [.gitignore](#gitignore)
 
 # Organizing the files
 
@@ -285,3 +286,6 @@ Tags must represent a stable version. It must be described with 3 digits.
 1.2.0
 0.0.4
 ```
+
+## .gitignore
+The ignore file can be based on the template file in this repository or on the site https://gitignore.io
