@@ -250,6 +250,9 @@ Macros must be defined with upper case snake case.
 #define MY_MACRO
 ```
 
+### Forward declaration
+User should always try to use forward declaration to decrease compilation time and avoid double inclusion and circular dependencies. Forward declaration is advised in header files.
+
 # Versionning with Git
 
 ## Branches
@@ -288,4 +291,4 @@ Tags must represent a stable version. It must be described with 3 digits.
 ```
 
 ## .gitignore
-The ignore file can be based on the template file in this repository or on the site https://gitignore.io
+The ignore file can be based on the template file in this repository or on the site https://gitignore.io.
