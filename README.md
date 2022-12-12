@@ -41,6 +41,7 @@ The project's CMakeLists must respect modern CMake. The variables must be named 
 ```CMake
 set(MY_VARIABLE)
 ```
+Some CMakeLists template are provided in this repository.
 
 ## Adding a README.md file
 Every project must contain a README.md file to describe its objectives.
@@ -132,6 +133,18 @@ using namespace MyNamespace;
 Ambiguous code must be commented to provide precision. The comment must be a short sentence starting with a lower case letter. A space must separate the "//" and the comment.
 ```c++
 // this is a comment
+```
+Every function must be documented using Doxygen syntax.
+- https://www.doxygen.nl/manual/docblocks.html
+- https://www.doxygen.nl/manual/commands.html
+```c++
+/**
+ * This is a documentation.
+ *
+ * @param int a
+ * @param int b
+ */
+void myFunction(int a, int b);
 ```
 
 ### Conditions
