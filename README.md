@@ -8,7 +8,7 @@ This repository is meant to describe a coding convention.
     - [CMake](#cmake)
     - [Adding a README.md file](#adding-a-readmemd-file)
 - [C++](#c)
-    - [Cases](#cases)
+    - [Writing](#writing)
     - [General coding](#general-coding)
 - [Versionning with Git](#versionning-with-git)
     - [Branches](#branches)
@@ -90,13 +90,24 @@ Collaborators or thanks
 
 # C++
 
-## Cases
+## Writing
 Naming cases
 - PascalCase
-- snake_case
 - camelCase
+- snake_case
 - lowercase
 - UPPERCASE
+
+Function pairs
+- Creation
+    - Create/Destroy
+    - Initialize/Terminate
+    - Commence/Finish
+    - Launch/Kill
+- Processing
+    - Start/Stop
+    - Begin/End
+    - Open/Close
 
 ## General coding
 
