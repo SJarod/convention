@@ -284,7 +284,7 @@ The branches must be named with no upper case letters. If the name uses multiple
 
 The main branch must be master and the remote must be origin. A second main branch can be added to keep the milestones to be on master, it shall be named dev.
 
-Each feature must be developped on specificly named branches.
+Each feature must be developped on specifically named branches.
 These features can then be merged into dev when stable. Then the stable version that appear to be a milestone can be merged to master
 ```
 origin/master
