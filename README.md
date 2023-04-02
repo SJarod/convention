@@ -108,6 +108,7 @@ Function pairs
     - Start/Stop
     - Begin/End
     - Open/Close
+    - Enter/Exit
 
 ## General coding
 
