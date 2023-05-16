@@ -25,6 +25,11 @@ graphicspipeline.hpp
 graphicspipeline.inl
 graphicspipeline.cpp
 ```
+Files containing the definition of an interface implementation may be named following their specialization (seperated with an under score).
+```
+graphicspipeline_vk.hpp
+graphicspipeline_gl.hpp
+```
 Header files can either be defined with the #pragma once operation or the include guards.
 ```c++
 #pragma once
@@ -262,10 +267,28 @@ Interfaces must be declared with a upper case I as first letter. It must use pas
 ```c++
 class IMyInterface
 {
-private:
+protected:
 
 public:
     virtual void myMethod() = 0;
+};
+```
+If needed, interface's derived classes may be named with their specialization (such as their file name, [see file name convention](#naming-files)).
+```c++
+class MyInterfaceImpl_vk : public IMyInterface
+{
+protected:
+
+public:
+    void myMethod() override;
+};
+
+class MyInterfaceImpl_gl : public IMyInterface
+{
+protected:
+
+public:
+    void myMethod() override;
 };
 ```
 
