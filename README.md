@@ -273,9 +273,9 @@ public:
     virtual void myMethod() = 0;
 };
 ```
-If needed, interface's derived classes may be named with their specialization (such as their file name, [see file name convention](#naming-files)).
+If needed, interface's derived classes may be named with their specialization and upper case first letter (such as their file name, [see file name convention](#naming-files)).
 ```c++
-class MyInterfaceImpl_vk : public IMyInterface
+class MyInterfaceImpl_Vk : public IMyInterface
 {
 protected:
 
@@ -283,7 +283,7 @@ public:
     void myMethod() override;
 };
 
-class MyInterfaceImpl_gl : public IMyInterface
+class MyInterfaceImpl_Gl : public IMyInterface
 {
 protected:
 
