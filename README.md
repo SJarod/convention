@@ -263,7 +263,7 @@ template<typename TType>
 ```
 
 ### Interfaces
-Interfaces must be declared with a upper case I as first letter. It must use pascal case. It should then respect the class's rules. The methods should be pure virtual functions.
+Interfaces must be declared with a upper case I as first letter. It must use pascal case. It should then respect the class's rules. The methods should be pure virtual functions. The interfaces should not contain any data.
 ```c++
 class IMyInterface
 {
