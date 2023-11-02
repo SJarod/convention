@@ -19,16 +19,17 @@ This repository is meant to describe a coding convention.
 # Organizing the files
 
 ## Naming files
-The files must only contain lowercase letters and no spaces. Some files can have inline definitions, they must be written in a .inl file. The header files must have the .hpp extension (for C++).
+The file names must only contain lowercase letters, underscores and no spaces. Some files can have inline definitions, they must be written in a .inl file. The header files must have the .hpp extension (for C++). If the file name contains at least 2 words, they must be seperated by an underscore character.
 ```
-graphicspipeline.hpp
-graphicspipeline.inl
-graphicspipeline.cpp
+engine.hpp
+graphics_pipeline.hpp
+graphics_pipeline.inl
+graphics_pipeline.cpp
 ```
 Files containing the definition of an interface implementation may be named following their specialization (seperated with an under score).
 ```
-graphicspipeline_vk.hpp
-graphicspipeline_gl.hpp
+graphics_pipeline_vk.hpp
+graphics_pipeline_gl.hpp
 ```
 Header files can either be defined with the #pragma once operation or the include guards.
 ```c++
@@ -118,19 +119,27 @@ Function pairs
 ## General coding
 
 ### Variables
-Variables must be named using camel case.
+Variables must be named using camelCase.
 ```c++
 int myInteger;
 ```
-Booleans must be named using camel case and being "tagged" with a letter lower case letter B.
+Booleans must be named using camelCase and being "tagged" with a letter lower case letter B.
 ```c++
 bool bMyBoolean;
 ```
 
 ### Functions
-Functions must be named using camel case.
+Functions must be named using snake_case.
 ```c++
-void myFunctionDoingSomething();
+void my_function_doing_something();
+```
+Methods must be named using camelCase.
+```c++
+class MyClass
+{
+public:
+    void myMethodDoingSomething();
+};
 ```
 
 ### Namespaces
@@ -141,7 +150,7 @@ namespace MyNamespace
 
 }
 ```
-"using namespace" should not be used except to increase readability.
+"using namespace" should not be used except readability issues.
 ```c++
 using namespace MyNamespace;
 ```
@@ -161,7 +170,7 @@ Every function must be documented using Doxygen syntax.
  * @param int a
  * @param int b
  */
-void myFunction(int a, int b);
+void my_function(const int a, const int b);
 ```
 
 ### Conditions
@@ -199,21 +208,21 @@ Function arguments must have a prefix describing their use.
 
 Input only argument must always be "tagged" const. If the variable size exceeds a float's size, it must be passed by reference.
 ```c++
-void doSomething(const int i_input);
+void do_something(const int i_input);
 ```
 Output only argument must be passed by reference.
 ```c++
-void doSomething(int& o_output);
+void do_something(int& o_output);
 ```
 Input and output argument must be passed by reference.
 ```c++
-void doSomething(int& io_inputOutput);
+void do_something(int& io_inputOutput);
 ```
 
 ### Classes
 
 #### Declaration
-Classes must be declared using pascal case. The members must be declared in this order : private, protected, public.
+Classes must be declared using PascalCase. The members must be declared in this order : private, protected, public.
 ```c++
 class MyClass
 {
@@ -236,22 +245,29 @@ void doSomethingMethod() const;
 Inline methods must be defined in a .inl file.
 
 ### Structures
-Structures must be declared using pascal case and being "tagged" with the upper case letter T for typedef. Even if structures can contain methods and private members, it is advised to only use public variables (without precising "public:" for readability).
+Structures must be declared using PascalCase and be finished with the upper case letter T for typedef. Even if structures can contain methods and private members, it is advised only to use public variables (without precising "public:" for readability).
 ```c++
-struct TMyStruct
+struct MyStructT
+{
+
+};
+```
+Plain old data structures may be declared using lowercase snake_case and be finished with "_t" to follow standard convention.
+```c++
+struct my_pod_struct_t
 {
 
 };
 ```
 
 ### Enums
-Enums must be declared using pascal case and with a upper case E as first letter. The members must be named using all upper case and snake case.
+Enums must be declared using pascal case and be finished with the upper case letter E. The members must be named using all upper case and snake_case. Count member is optional but recommended.
 ```c++
-enum EMyEnum
+enum MyEnumE
 {
-    MY_FIRST_VARIABLE = 0,
-    MY_SECOND_VARIABLE = 1,
-    MY_THIRD_VARIABLE = 2,
+    MY_FIRST_MEMBER = 0,
+    MY_SECOND_MEMBER = 1,
+    MY_THIRD_MEMBER = 2,
     COUNT = 3
 };
 ```
@@ -263,9 +279,9 @@ template<typename TType>
 ```
 
 ### Interfaces
-Interfaces must be declared with a upper case I as first letter. It must use pascal case. It should then respect the class's rules. The methods should be pure virtual functions. The interfaces should not contain any data.
+Interfaces must be declared with the upper case letter I as last letter. It must use PascalCase. It should then respect the class's rules. The methods should be pure virtual functions. The interfaces should not contain any data.
 ```c++
-class IMyInterface
+class MyInterfaceI
 {
 protected:
 
@@ -275,7 +291,7 @@ public:
 ```
 If needed, interface's derived classes may be named with their specialization and upper case first letter (such as their file name, [see file name convention](#naming-files)).
 ```c++
-class MyInterfaceImpl_Vk : public IMyInterface
+class MyInterfaceImpl_Vk : public MyInterfaceI
 {
 protected:
 
@@ -283,12 +299,25 @@ public:
     void myMethod() override;
 };
 
-class MyInterfaceImpl_Gl : public IMyInterface
+class MyInterfaceImpl_Gl : public MyInterfaceI
 {
 protected:
 
 public:
     void myMethod() override;
+};
+```
+If an interface contains any data, it then becomes an abstract class and should be declared as such :
+```c++
+class MyAbstractClassABC
+{
+protected:
+    int a;
+    int b;
+
+public:
+    void notAbstractMethod();
+    void pureVirtualMethod() = 0;
 };
 ```
 
@@ -300,6 +329,13 @@ Macros must be defined with upper case snake case.
 
 ### Forward declaration
 User should always try to use forward declaration to decrease compilation time and avoid double inclusion and circular dependencies. Forward declaration is advised in header files.
+```c++
+class MyForwardedClass;
+MyForwardedClass myObj;
+```
+```c++
+class MyForwardedClass myObj;
+```
 
 # Versionning with Git
 
@@ -331,7 +367,7 @@ git commit -m "quick modification" -m "- modification 1
  ```
 
 ## Tags
-Tags must represent a stable version. It must be described with 3 digits.
+Tags must represent a stable version. It must be described with 3 digits (major, minor, patch).
 ```
 1.0.0
 1.2.0
