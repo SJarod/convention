@@ -1,21 +1,21 @@
 #include <iostream>
 
-void doSomething()
+void do_something()
 {
 	// do something
 }
 
 // pass variables as reference if the size is bigger than a float
-void inputArgument(const int i_input)
+void input_argument(const int i_input)
 {
 }
 
 // pass unset variable as output value
-void outputArgument(int& o_output)
+void output_argument(int& o_output)
 {
 }
 
-void intputAndOutputArgument(int& io_output)
+void intput_and_output_argument(int& io_output)
 {
 }
 
@@ -23,18 +23,18 @@ int main()
 {
 	// if/else model
 	if (true)
-		doSomething();
+		do_something();
 	else
-		doSomething();
+		do_something();
 
 	if (true)
 	{
-		doSomething();
-		doSomething();
+		do_something();
+		do_something();
 	}
 	else
 	{
-		doSomething();
+		do_something();
 	}
 
 	// for model
