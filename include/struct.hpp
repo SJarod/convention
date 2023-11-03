@@ -1,10 +1,16 @@
 #pragma once
 
-struct TStruct
+struct StructT
 {
 	bool	bMyStructBool;
-	int		myStructInt;
+	int	myStructInt;
 	float	myStructFloat;
 
-	void myMethod();
+	void 	myMethod();
+};
+
+struct struct_t
+{
+	int a;
+	int b;
 };
