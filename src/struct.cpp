@@ -7,7 +7,7 @@
 // current source file's include file
 #include "struct.hpp"
 
-void TStruct::myMethod()
+void StructT::myMethod()
 {
 	// do something
 }
