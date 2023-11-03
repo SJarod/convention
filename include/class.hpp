@@ -4,19 +4,19 @@ class Class
 {
 private:
 	bool	bMyPrivateBool;
-	int		myPrivateInt;
+	int	myPrivateInt;
 	float	myPrivateFloat;
 
-	void myPrivateMethod();
+	void 	myPrivateMethod();
 
 protected:
 	bool	bMyProtectedBool;
 
-	void myProtectedMethod();
+	void 	myProtectedMethod();
 
 public:
 	bool	bMyPublicBool;
-	int		myPublicInt;
+	int	myPublicInt;
 
 	// if the constructor/destructor is default, no need to declare it
 	Class() = default;
