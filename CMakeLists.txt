@@ -35,6 +35,11 @@ set(SOURCES
     src/filename.cpp
 )
 
+
+# define a definition macro in the entire project
+add_compile_definitions(MY_MACRO)
+
+
 # project's result (choose between executable or static library)
 add_executable(${BUILD_NAME} ${HEADERS} ${SOURCES})
 add_library(${BUILD_NAME} STATIC ${SOURCES})
@@ -48,6 +53,14 @@ target_link_libraries(${BUILD_NAME}
     PUBLIC lib1_build_name
     PUBLIC lib2_build_name
 )
+
+
+# build events
+add_custom_command(TARGET ${BUILD_NAME}
+    POST_BUILD
+    COMMAND
+)
+
 
 # installing build (using cmake --install command)
 install(TARGETS ${BUILD_NAME})
