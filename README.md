@@ -296,7 +296,7 @@ class MyInterfaceImpl_Vk : public MyInterfaceI
 protected:
 
 public:
-    void myMethod() override;
+    virtual void myMethod() override;
 };
 
 class MyInterfaceImpl_Gl : public MyInterfaceI
@@ -304,7 +304,7 @@ class MyInterfaceImpl_Gl : public MyInterfaceI
 protected:
 
 public:
-    void myMethod() override;
+    virtual void myMethod() override;
 };
 ```
 If an interface contains any data, it then becomes an abstract class and should be declared as such :
@@ -316,8 +316,8 @@ protected:
     int b;
 
 public:
-    void notAbstractMethod();
-    void pureVirtualMethod() = 0;
+    virtual void notAbstractMethod();
+    virtual void pureVirtualMethod() = 0;
 };
 ```
 
