@@ -331,10 +331,10 @@ Macros must be defined with upper case snake case.
 User should always try to use forward declaration to decrease compilation time and avoid double inclusion and circular dependencies. Forward declaration is advised in header files.
 ```c++
 class MyForwardedClass;
-MyForwardedClass myObj;
+MyForwardedClass* myObj;
 ```
 ```c++
-class MyForwardedClass myObj;
+class MyForwardedClass* myObj;
 ```
 
 # Versionning with Git
