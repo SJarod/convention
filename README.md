@@ -172,6 +172,12 @@ Every function must be documented using Doxygen syntax.
  */
 void my_function(const int a, const int b);
 ```
+Classes, structs, methods and variables as well.
+`ˋ`
+class MyClass
+{
+};
+ˋˋˋ
 
 ### Conditions
 The if-else statement must not use any curly brackets if the scopes are only one line.
