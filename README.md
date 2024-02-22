@@ -174,10 +174,30 @@ void my_function(const int a, const int b);
 ```
 Classes, structs, methods and variables as well.
 `ˋ`
+/**
+ * This is my class.
+ */
 class MyClass
 {
+public:
+    /**
+     * This is my method
+     */
+    void myMethod() const;
 };
-ˋˋˋ
+```
+```
+/**
+ * This is my struct.
+ */
+struct MyStructT
+{
+    /**
+     * This is my variable
+     */
+    int var;
+};
+```
 
 ### Conditions
 The if-else statement must not use any curly brackets if the scopes are only one line.
