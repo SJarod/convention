@@ -173,7 +173,7 @@ Every function must be documented using Doxygen syntax.
 void my_function(const int a, const int b);
 ```
 Classes, structs, methods and variables as well.
-`ˋ`c++
+```c++
 /**
  * This is my class.
  */
