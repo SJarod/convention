@@ -244,6 +244,10 @@ Input and output argument must be passed by reference.
 ```c++
 void do_something(int& io_inputOutput);
 ```
+Objects that are passed in functions or constructors for dependency injection may have a "di_" prefix.
+```
+void do_something(const std::shared_ptr<A> di_injection);
+```
 
 ### Classes
 
@@ -259,6 +263,7 @@ protected:
 public:
 };
 ```
+Objects that are able to fire client logic may be composed of a "user pointee". This pointer will than be passed to an implementable callback event.
 
 #### Member variables
 The member variables must respect default variables convention.
