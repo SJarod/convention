@@ -305,6 +305,8 @@ template<typename TType>
 ```
 
 ### Interfaces
+Interfaces are used to follow the Dependency Inversion Principle (DIP). It is useful for abstraction and dependency injection.
+The concrete classes implementing the interfaces may be created using the factory pattern (https://refactoring.guru/design-patterns/factory-method).
 Interfaces must be declared with the upper case letter I as last letter. It must use PascalCase. It should then respect the class's rules. The methods should be pure virtual functions. The interfaces should not contain any data.
 ```c++
 class MyInterfaceI
