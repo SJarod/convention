@@ -245,7 +245,7 @@ Input and output argument must be passed by reference.
 void do_something(int& io_inputOutput);
 ```
 Objects that are passed in functions or constructors for dependency injection may have a "di_" prefix.
-```
+```c++
 void do_something(const std::shared_ptr<A> di_injection);
 ```
 
