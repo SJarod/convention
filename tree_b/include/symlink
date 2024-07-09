@@ -1,2 +1,6 @@
-#../lib/
+# simlink to either internal folder or lib folder
+# or both
+# can contain multiple simlinks
+
+../lib/
 ../internal/

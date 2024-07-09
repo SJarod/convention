@@ -1,0 +1,1 @@
+# same work tree as the internal folder

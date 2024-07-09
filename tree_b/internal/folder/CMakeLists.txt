@@ -1,8 +1,8 @@
-set(component src)
+set(component folder)
 
 add_executable(${component})
 
 target_sources(${component}
     PRIVATE
-    main.cpp
+    class2.cpp
 )
