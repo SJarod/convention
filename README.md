@@ -115,6 +115,7 @@ Function pairs
     - Begin/End
     - Open/Close
     - Enter/Exit
+    - Allocate/Free
 
 ## General coding
 
@@ -126,6 +127,10 @@ int myInteger;
 Booleans must be named using camelCase and being "tagged" with a letter lower case letter B.
 ```c++
 bool bMyBoolean;
+```
+Pointers name must start with the lowercase letter p.
+```c++
+int* pMyInteger = &myInteger;
 ```
 
 ### Functions
@@ -139,6 +144,17 @@ class MyClass
 {
 public:
     void myMethodDoingSomething();
+};
+```
+Getter methods must be declared using the no discard attribute '[[nodiscard]]'.
+```c++
+class MyClass
+{
+private:
+    int m_value;
+
+public:
+    [[nodiscard]] int getValue() const;
 };
 ```
 
@@ -257,16 +273,46 @@ Classes must be declared using PascalCase. The members must be declared in this 
 class MyClass
 {
 private:
+    // references
+
+private:
+    // private members/fields
+
+private:
+    // private methods
 
 protected:
+    // protected members/fields
 
 public:
+    // constructors
+
+public:
+    // public members/fields
+
+public:
+    // public methods
+
+public:
+    // getter and setter functions
 };
 ```
-Objects that are able to fire client logic may be composed of a "user pointee". This pointer will than be passed to an implementable callback event.
+Objects that are able to fire client logic may be composed of a "user pointer". This pointer will than be passed to an implementable callback event.
+Class declaration and definition should follow the rule of zero, rule of three or rule of five according to the [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines).
 
 #### Member variables
 The member variables must respect default variables convention.
+Private and protected members should have their name start with the 'm_' prefix.
+```c++
+class MyClass
+{
+private:
+    int m_value;
+
+protected:
+    float m_value2;
+};
+```
 
 #### Methods
 Class' methods must be "const" by default.
@@ -274,6 +320,14 @@ Class' methods must be "const" by default.
 void doSomethingMethod() const;
 ```
 Inline methods must be defined in a .inl file.
+
+Methods and functions can have their prototype be declared with macro attribut or call specifiers.
+```c++
+#define ATTR
+#define APICALL
+
+ATTR void APICALL my_function();
+```
 
 ### Structures
 Structures must be declared using PascalCase and be finished with the upper case letter T for typedef. Even if structures can contain methods and private members, it is advised only to use public variables (without precising "public:" for readability).
