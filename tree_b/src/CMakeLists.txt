@@ -1,4 +1,4 @@
-set(component src)
+set(component ${BUILD_NAME})
 
 add_executable(${component})
 
