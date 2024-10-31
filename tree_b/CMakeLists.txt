@@ -15,6 +15,7 @@ if(NOT GIT_RESULT EQUAL "0")
 endif()
 
 set(PROJECT_NAME project_name)
+set(BUILD_NAME build_name)
 
 # initiating project given its name
 project(${PROJECT_NAME})
