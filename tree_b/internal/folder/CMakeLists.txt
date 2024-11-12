@@ -1,6 +1,6 @@
 set(component folder)
 
-add_library(${component} SHARED "")
+add_library(${component} STATIC "")
 
 set_property(TARGET ${component}
     PROPERTY PUBLIC_HEADER

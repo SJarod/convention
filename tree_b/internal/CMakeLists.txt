@@ -1,6 +1,6 @@
 set(component internal)
 
-add_library(${component} SHARED "")
+add_library(${component} STATIC "")
 
 set_property(TARGET ${component}
     PROPERTY PUBLIC_HEADER
@@ -14,9 +14,7 @@ target_sources(${component}
 )
 
 target_link_libraries(${component}
-    PUBLIC lib1_build_name
-    PUBLIC lib2_build_name
-    PRIVATE lib3_build_name
+    PUBLIC folder
 )
 
 target_include_directories(${component} PRIVATE "${CMAKE_CURRENT_LIST_DIR}")
