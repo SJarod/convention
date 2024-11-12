@@ -1,6 +1,6 @@
 set(component folder)
 
-add_executable(${component})
+add_library(${component} SHARED "")
 
 set_property(TARGET ${component}
     PROPERTY PUBLIC_HEADER
