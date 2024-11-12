@@ -20,9 +20,9 @@ set(BUILD_NAME build_name)
 # initiating project given its name
 project(${PROJECT_NAME})
 
+add_subdirectory(externals)
 add_subdirectory(internal)
 add_subdirectory(lib)
-add_subdirectory(externals)
 add_subdirectory(src)
 
 
