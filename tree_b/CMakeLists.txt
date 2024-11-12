@@ -15,7 +15,6 @@ if(NOT GIT_RESULT EQUAL "0")
 endif()
 
 set(PROJECT_NAME project_name)
-set(BUILD_NAME build_name)
 
 # initiating project given its name
 project(${PROJECT_NAME})
@@ -24,24 +23,3 @@ add_subdirectory(externals)
 add_subdirectory(internal)
 add_subdirectory(lib)
 add_subdirectory(src)
-
-
-
-# build events
-add_custom_command(TARGET ${BUILD_NAME}
-    POST_BUILD
-    COMMAND
-)
-
-
-# installing build (using cmake --install command)
-install(TARGETS ${BUILD_NAME})
-# installing the include files
-install(
-    DIRECTORY include/
-    DESTINATION include
-    FILES_MATCHING
-    PATTERN *.h
-    PATTERN *.hpp
-    PATTERN *.inl
-)

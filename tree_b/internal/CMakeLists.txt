@@ -21,3 +21,15 @@ target_include_directories(${component} PRIVATE "${CMAKE_CURRENT_LIST_DIR}")
 target_include_directories(${component} PUBLIC "${CMAKE_CURRENT_LIST_DIR}/..")
 
 add_subdirectory(folder)
+
+# installing build (using cmake --install command)
+install(TARGETS ${component})
+# installing the include files
+install(
+    DIRECTORY internal/
+    DESTINATION include
+    FILES_MATCHING
+    PATTERN *.h
+    PATTERN *.hpp
+    PATTERN *.inl
+)
