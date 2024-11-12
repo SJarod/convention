@@ -13,4 +13,10 @@ target_sources(${component}
     class.hpp # header that are kept private
 )
 
+target_link_libraries(${component}
+    PUBLIC lib1_build_name
+    PUBLIC lib2_build_name
+    PRIVATE lib3_build_name
+)
+
 add_subdirectory(folder)
