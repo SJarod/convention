@@ -18,3 +18,6 @@ target_link_libraries(${component}
     PUBLIC lib2_build_name
     PRIVATE lib3_build_name
 )
+
+target_include_directories(${component} PRIVATE "${CMAKE_CURRENT_LIST_DIR}")
+target_include_directories(${component} PUBLIC "${CMAKE_CURRENT_LIST_DIR}/..")
