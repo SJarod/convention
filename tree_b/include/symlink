@@ -4,3 +4,9 @@
 
 ../lib/
 ../internal/
+
+# bash
+# ln -s dir/to/target path/to/link
+# msdos
+# mklink path\to\link dir\to\target
+# https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mklink
