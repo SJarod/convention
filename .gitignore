@@ -2,6 +2,7 @@
 [Bb]uild
 [Ii]nstall
 .vs
+.vscode
 out
 *.user
 .idea
