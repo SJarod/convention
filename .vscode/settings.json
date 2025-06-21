@@ -1,0 +1,10 @@
+{
+    "cmake.debugConfig": {
+        // https://www.reddit.com/r/vscode/comments/g5axw0/use_external_terminal_in_vs_code
+        "externalConsole": true,
+        // changing current working directory may be necessary for vscode,
+        // the build products are often in config folder (Debug, Release, ...)
+        // https://stackoverflow.com/a/63959969
+        "cwd": "${workspaceFolder}/build"
+    }
+}
