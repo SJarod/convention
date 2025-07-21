@@ -27,7 +27,7 @@ set_target_properties(target_name PROPERTIES
       	MAP_IMPORTED_CONFIG_RELWITHDEBINFO Release
 )
 target_include_directories(target_name INTERFACE "dir")
-target_link_libraries(target_name INTERFACE "dir")
+target_link_directories(target_name INTERFACE "dir")
 # may require changing workspace directory (cwd, pwd) regarding the IDE
 configure_file(path_to_lib.dll ${CMAKE_BINARY_DIR}/path_to_lib.dll COPYONLY)
 # for install
