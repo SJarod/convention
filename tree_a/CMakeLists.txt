@@ -57,7 +57,7 @@ install(TARGETS ${BUILD_NAME})
 # installing the include files
 install(
     DIRECTORY include/
-    DESTINATION include
+    TYPE INCLUDE
     FILES_MATCHING
     PATTERN *.h
     PATTERN *.hpp

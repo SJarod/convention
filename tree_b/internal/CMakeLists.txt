@@ -27,7 +27,7 @@ install(TARGETS ${component})
 # installing the include files
 install(
     DIRECTORY internal/
-    DESTINATION include
+    TYPE INCLUDE
     FILES_MATCHING
     PATTERN *.h
     PATTERN *.hpp
